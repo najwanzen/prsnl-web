@@ -1,0 +1,384 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    
+}
+
+/* Header & Navigation */
+header {
+    background: #ffffff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #113761;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #113761;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 1rem 0;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1.5rem 0;
+    }
+    
+    nav ul li a {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-color: #113761;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding-top: 60px; 
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content span {
+    color: #ffce10;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #113761;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #ffce10;
+    color: #113761;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* My Works */
+.my-works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*  Services */
+
+p > i{
+   font-size: 2.0rem;
+}
+
+.services {
+    padding: 4rem 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.services-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.item {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+
+    p {
+        font-size: 30px;
+    }
+}
+
+.item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Animasi Typing */
+  .hero-content h1::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+.item {
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: #121212;
+
+    h3 {
+    text-decoration: none;
+    list-style-type: none;
+    color: #121212;
+    }
+
+    p {
+        text-decoration: none;
+        list-style-type: none;
+        color: #121212;
+    }
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Progress Bars */
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
+  margin-top: 10px;
+}
+
+.progress {
+  background: #3498db;
+  height: 100%;
+  border-radius: 10px;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+/* Parallax Effect */
+.hero {
+  background-attachment: fixed;
+}
+
+/* Particle.js Container (Opsional) */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 4rem 0;
+    text-align: center;
+    
+    h2 {
+        color: #121212;
+    }
+}
+
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background: #1a1a1a;
+}
+
+body.dark-mode .item,
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background: #2d2d2d;
+    color: #fff;
+    border-color: #444;
+}
+
+/* Animasi Scroll */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+
+    header {
+        img {
+            height: 30px;
+        }
+    }
+
+    .about {
+        padding: 15px;
+    }
+
+    .contact {
+        padding: 20pxx;
+    }
+}
